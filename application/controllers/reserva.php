@@ -185,46 +185,7 @@ class Reserva extends CI_Controller{
 
 		//###########################################################################
 
-		/*
-		//fechaFin *
-		if($DatosFotmulario['fechaFin'] != '')
-			$resultado['fechaFin'] = true; //ok
-		else
-			$resultado['fechaFin'] = false; //no ok   
 
-		//cantPersonas *
-		if($DatosFotmulario['cantPersonas'] != '')
-			$resultado['cantPersonas'] = true;
-		else
-			$resultado['cantPersonas'] = false;	
-		
-		//nombreT *
-		if($DatosFotmulario['nombreT'] != '')
-			$resultado['nombreT'] = true;
-		else
-			$resultado['nombreT'] = false;	
-
-		//numHab *
-		if($DatosFotmulario['numHab'] != '')
-			$resultado['numHab'] = true;
-		else
-			$resultado['numHab'] = false;	
-
-		//precioPorNoche * 
-		if($DatosFotmulario['precioPorNoche'] != '')
-			$resultado['precioPorNoche'] = true;
-		else
-			$resultado['precioPorNoche'] = false;
-			
-		//documento *	
-		if($DatosFotmulario['documento'] != '')
-			$resultado['documento'] = true;
-		else
-			$resultado['documento'] = false;
-
-		*/	
-		//armar todos los que estan mal para devolver a la vista 
-		
         $cont = 0;
         foreach ($resultado as $e){             
             if ($e->estado == false)
