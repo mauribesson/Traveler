@@ -1,11 +1,13 @@
 <!-- Bootstrap formulario -->
-
+<!--
 <?php 
     if (isset($validacion))
       { 
         var_dump($validacion);
       }
 ?>
+-->
+<?php  if (isset($validacion) ){ echo $validacion['precioPorNoche']->valor ; } ?>
 
 <div class="container p-4">
 <div class="jumbotron">
@@ -22,7 +24,7 @@
   <div class="row">
     <div class="col-md-6">      
       <h2>Reserva 
-        <h1 style="color:red"><b>[Sin terminar: Validaciones]</b></h1>
+        <h1 style="color:red"><b>[Sin terminar: fECHA POR DEFECTO Y CAMPO NUEVO SI FALTA, FECHA HASMA TENGA QUE SER MENOR]</b></h1>
       </h2>
     </div>
   </div>
@@ -44,7 +46,7 @@
               </div>
 
               <div class="form-group">
-                <label for="fecha2">Hasta la Fecha: </label> 
+                <label for="fecha2">Hasta la Fecha: (por defecto un día)</label> 
                 <?php
                     if (isset($validacion) && !$validacion['fechaFin']->estado) 
                         echo '<small class="text-danger"><b>*</b></small>' ; 
@@ -63,7 +65,7 @@
                 if (isset($validacion) && !$validacion['cantPersonas']->estado)
                     echo '<small class="text-danger"><b>*</b></small>' ;
             ?>
-            <input type="number" class="form-control" name="cantPersonas" value=1>					
+            <input id="cantPersonas" type="number" class="form-control" name="cantPersonas" value=1>					
           </div>
 
           <div class="form-group">
@@ -72,7 +74,7 @@
                 if (isset($validacion) && !$validacion['precioPorNoche']->estado)
                     echo '<small class="text-danger"><b>*</b></small>' ;
             ?>      
-            <input type="number" class="form-control" name="precioPorNoche" placeholder="">					
+            <input id="precioPorNoche" type="number" class="form-control" name="precioPorNoche" placeholder="" >					
           </div>
 
           <div class="form-group">
@@ -84,7 +86,9 @@
             <select name="nombre" class="form-control" id="nombre">
               <?php 
               foreach ($usarios as $e) { 
-                echo("<option> $e->nombreT</option>"); 
+                if (isset($validacion) && $validacion['nombreT']->estado && $e->nombreT == $validacion['nombreT']->valor) 
+                    echo("<option selected> $e->nombreT</option>"); 
+                else echo("<option> $e->nombreT</option>"); 
               } 				
               ?>
             </select>
@@ -99,7 +103,9 @@
             <select name="numero" class="form-control" id="numero">
               <?php 
               foreach ($habitacion as $e) { 
-                echo("<option> $e->numHab</option>"); 
+                if (isset($validacion) && $validacion['numHab']->estado && $e->nombreT == $validacion['numHab']->valor) 
+                  echo("<option selected> $e->numHab</option>"); 
+                else echo("<option> $e->numHab</option>"); 
               } 				
               ?>
             </select>
@@ -109,7 +115,7 @@
             <?php
                 if (isset($validacion) && !$validacion['documento']->estado)
                     echo '<small class="text-danger"><b>*</b></small>' ; ?>      
-            <input type="documento" class="form-control" name="documento" placeholder="">
+            <input id="documento" type="documento" class="form-control" name="documento" placeholder="">
             <small class="text-danger">(Sin puntos ".")</small>
           </div>
           <button type="submit" class="btn btn-primary">Aceptar</button>
@@ -127,6 +133,7 @@
         $('#datetimepicker1').datetimepicker({
             locale: 'es',
             format: 'DD/MM/YYYY',
+            //defaultDate: moment(),
             icons: {
                     time: "fa fa-clock-o",
                     date: "fa fa-calendar",
@@ -137,6 +144,7 @@
         $('#datetimepicker2').datetimepicker({
             locale: 'es',
             format: 'DD/MM/YYYY',
+            //defaultDate: moment().add(1, 'days'),
             icons: {
                     time: "fa fa-clock-o",
                     date: "fa fa-calendar",
@@ -146,7 +154,13 @@
         });
 
         //Setear fecha por defecto 
-        //$('#datetimepicker1').datepicker('update', new Date(2011, 2, 5));
+        //$('#datetimepicker1').datetimepicker('viewDate', moment('11/21/2018', 'MM/DD/YYYY'));
+
+        //recarga los formularios post validacion. 
+        $('#precioPorNoche').val(<?php  if (isset($validacion) ){ echo $validacion['precioPorNoche']->valor ; } ?>);
+        $('#cantPersonas').val(<?php  if (isset($validacion) ){ echo $validacion['cantPersonas']->valor ; } ?>);
+        $('#documento').val(<?php  if (isset($validacion) ){ echo $validacion['documento']->valor ; } ?>);
+       
         
 
     });

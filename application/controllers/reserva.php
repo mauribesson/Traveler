@@ -42,8 +42,8 @@ class Reserva extends CI_Controller{
             );          
 
         //VALIDACIN DE FORMULARIO    
-        $validacion = $this->ValidarFormularioNuevaReserva($dato);
-    
+		$validacion = $this->ValidarFormularioNuevaReserva($dato);
+		    
 		if (empty($validacion))
 			{ // formulario correcto, si la validacion esta vacia.        
 				$reservaDisponible = array();
@@ -54,8 +54,7 @@ class Reserva extends CI_Controller{
 				if ($reservaDisponible['reserva']->result()){
 					$this->load->view('traveler/header');
 					$this->load->view('traveler/reserva/noDisponible');			
-				}else{
-					var_dump($dato);
+				}else{					
 					$this->reserva_model->altaReserva($dato);
 					$this->load->view('traveler/header');
 					$this->load->view('traveler/reserva/altaReserva');   
@@ -69,123 +68,142 @@ class Reserva extends CI_Controller{
 
 	//Validar formulario de nueva reserva
 	function ValidarFormularioNuevaReserva($DatosFotmulario = array()){
+		$resultado = array();
 
-		//Creaar un objeto de validacion 
-		$campo = new stdClass();
-		$campo->estado = false;
-		$campo->valor = '';
+		//Creaar un objeto de validacion
+		$campo1 = new stdClass();
+		$campo1->estado = false;
+		$campo1->valor = '';
 
-		$resultado = array($campo);
+		$campo2 = new stdClass();
+		$campo2->estado = false;
+		$campo2->valor = '';
 
+		$campo3 = new stdClass();
+		$campo3->estado = false;
+		$campo3->valor = '';
 
+		$campo4 = new stdClass();
+		$campo4->estado = false;
+		$campo4->valor = '';
 
+		$campo5 = new stdClass();
+		$campo5->estado = false;
+		$campo5->valor = '';
+
+		$campo6 = new stdClass();
+		$campo6->estado = false;
+		$campo6->valor = '';
+
+		$campo7 = new stdClass();
+		$campo7->estado = false;
+		$campo7->valor = '';
+	
 
 		//fechaInicio
 		if($DatosFotmulario['fechaInicio'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['fechaInicio'];
-				$resultado['fechaInicio'] = $campo; 
+				
+				$campo1->estado = true; //ok, el campo esta cargado 
+				$campo1->valor = $DatosFotmulario['fechaInicio'];
+				$resultado['fechaInicio'] = $campo1; 
 			}			
 		else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['fechaInicio']; //guarda el valor vacio 
-				$resultado['fechaInicio'] = $campo; 
+				$campo1->estado = false; //ok
+				$campo1->valor = $DatosFotmulario['fechaInicio']; //guarda el valor vacio 
+				$resultado['fechaInicio'] = $campo1; 
 			}
 
 
 		//fechaFin
 		if($DatosFotmulario['fechaFin'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['fechaFin'];
-				$resultado['fechaFin'] = $campo; 
+				$campo2->estado = true; //ok, el campo esta cargado 
+				$campo2->valor = $DatosFotmulario['fechaFin'];
+				$resultado['fechaFin'] = $campo2; 
 			}			
 		else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['fechaFin']; //guarda el valor vacio 
-				$resultado['fechaFin'] = $campo; 
+				$campo2->estado = false; //ok
+				$campo2->valor = $DatosFotmulario['fechaFin']; //guarda el valor vacio 
+				$resultado['fechaFin'] = $campo2; 
 			}	
 			   
 
 		//cantPersonas
 		if($DatosFotmulario['cantPersonas'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['cantPersonas'];
-				$resultado['cantPersonas'] = $campo; 
+				$campo3->estado = true; //ok, el campo esta cargado 
+				$campo3->valor = $DatosFotmulario['cantPersonas'];
+				$resultado['cantPersonas'] = $campo3; 
 			}			
 		else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['cantPersonas']; //guarda el valor vacio 
-				$resultado['cantPersonas'] = $campo; 
+				$campo3->estado = false; //ok
+				$campo3->valor = $DatosFotmulario['cantPersonas']; //guarda el valor vacio 
+				$resultado['cantPersonas'] = $campo3; 
 			}
 
 		//nombreT
 		if($DatosFotmulario['nombreT'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['nombreT'];
-				$resultado['nombreT'] = $campo; 
+				$campo4->estado = true; //ok, el campo esta cargado 
+				$campo4->valor = $DatosFotmulario['nombreT'];
+				$resultado['nombreT'] = $campo4; 
 			}			
 		else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['nombreT']; //guarda el valor vacio 
-				$resultado['nombreT'] = $campo; 
+				$campo4->estado = false; //ok
+				$campo4->valor = $DatosFotmulario['nombreT']; //guarda el valor vacio 
+				$resultado['nombreT'] = $campo4; 
 			}
 
 		//numHab
 		if($DatosFotmulario['numHab'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['numHab'];
-				$resultado['numHab'] = $campo; 
+				$campo5->estado = true; //ok, el campo esta cargado 
+				$campo5->valor = $DatosFotmulario['numHab'];
+				$resultado['numHab'] = $campo5; 
 			}			
 			else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['numHab']; //guarda el valor vacio 
-				$resultado['numHab'] = $campo; 
+				$campo5->estado = false; //ok
+				$campo5->valor = $DatosFotmulario['numHab']; //guarda el valor vacio 
+				$resultado['numHab'] = $campo5; 
 			}
 
 		//precioPorNoche
-		if($DatosFotmulario['precioPorNoche'] != '')
+
+			
+		if($DatosFotmulario['precioPorNoche'] != '' )
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['precioPorNoche'];
-				$resultado['precioPorNoche'] = $campo; 
+				$campo6->estado = true; //ok, el campo esta cargado 
+				$campo6->valor = $DatosFotmulario['precioPorNoche'];
+				$resultado['precioPorNoche'] = $campo6; 				
+				
 			}			
 			else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['precioPorNoche']; //guarda el valor vacio 
-				$resultado['precioPorNoche'] = $campo; 
+				$campo6->estado6 = false; //ok
+				$campo6->valor6 = $DatosFotmulario['precioPorNoche']; //guarda el valor vacio 
+				$resultado['precioPorNoche'] = $campo6; 
 			}
 
 		//documento
 		if($DatosFotmulario['documento'] != '')
 			{
-				$campo->estado = true; //ok, el campo esta cargado 
-				$campo->valor = $DatosFotmulario['documento'];
-				$resultado['documento'] = $campo; 
+				$campo7->estado = true; //ok, el campo esta cargado 
+				$campo7->valor = $DatosFotmulario['documento'];
+				$resultado['documento'] = $campo7; 
 			}			
 		else
 			{
-				$campo->estado = false; //ok
-				$campo->valor = $DatosFotmulario['documento']; //guarda el valor vacio 
-				$resultado['documento'] = $campo; 
+				$campo7->estado = false; //ok
+				$campo7->valor = $DatosFotmulario['documento']; //guarda el valor vacio 
+				$resultado['documento'] = $campo7; 
 			}
-
-
-
-
-		//###########################################################################
-
-
+			
         $cont = 0;
         foreach ($resultado as $e){             
             if ($e->estado == false)
@@ -195,8 +213,7 @@ class Reserva extends CI_Controller{
         if ($cont > 0) //Faltan campos
             return $resultado;
         else
-            return array(); // Formulario OK   		
-		
+            return array(); // Formulario OK   			
 	} 
 
 	function reservasPorFecha(){
@@ -210,8 +227,6 @@ class Reserva extends CI_Controller{
 			'fecha1' =>fechaSQL_helper( $this->input->post('fecha1')),
 			'fecha2' => fechaSQL_helper( $this->input->post('fecha2'))
 		);
-
-		var_dump($data);
 
 		$dato['reservas'] = $this->reserva_model->reservasPorFecha($data);
 		$this->load->view('traveler/header');
