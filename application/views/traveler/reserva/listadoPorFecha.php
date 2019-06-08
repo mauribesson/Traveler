@@ -3,7 +3,7 @@
 
 <div class="container">
 	<div class="col-md-12">
-		<h1>Listado por fecha <b>[COLOCAR RANGO DE FECHAS]</b></h1>
+		<h1>Listado por fecha <b style="color: red;">[COLOCAR RANGO DE FECHAS]</b></h1>
 	</div>
 	<!--<div class="col-md-12">
 		<div class="btn-group">

@@ -238,14 +238,14 @@ class Reserva extends CI_Controller{
 		$this->load->view('traveler/reserva/formularioReservaPorPasajero');
     }
         
-	function listadoPorPasajero(){
+	/*function listadoPorPasajero(){
 		$dato = array(
 			'dni' => $this->input->post('dni')
 		);
 		$dato['pasajero'] = $this->reserva_model->reservasPorpasajero($dato);
 		$this->load->view('traveler/header');
 		$this->load->view('traveler/reserva/listadoPorPasajero', $dato);
-    }
+    }*/
     
 	function alojamientosPorFecha(){
 		$this->load->view('traveler/header');
@@ -274,10 +274,13 @@ class Reserva extends CI_Controller{
 		$this->load->view('traveler/header');
 		$this->load->view('traveler/reserva/listaPorPasajero', $dato);
 	}
+
 	function registroPasajeros(){
 		$this->load->view('traveler/header');
 		$this->load->view('traveler/reserva/formularioRegistroPasajero');
 	}
+
+	//Listado de pasajero 
 	function listadoPasajeros(){
 		$data = array(
 			'dni' => $this->input->post('dni')

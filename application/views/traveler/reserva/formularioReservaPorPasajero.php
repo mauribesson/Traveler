@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6" >
-			<form action="<?php echo base_url('/index.php/reserva/listadoPorPasajero'); ?>" method="post" accept-charset="utf-8">
+			<form action="<?php echo base_url('/index.php/pasajero/listadoPorPasajero'); ?>" method="post" accept-charset="utf-8">
 				<div class="form-group">
 					<label for="nombreTipo">DNI del pasajero:</label>
 					<input type="text" class="form-control" name="dni" placeholder="DNI">

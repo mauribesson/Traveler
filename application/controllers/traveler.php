@@ -357,10 +357,14 @@ class Traveler extends CI_Controller{
 		$this->load->view('traveler/header');
 		$this->load->view('traveler/reserva/listaPorPasajero', $dato);
 	}
-	function registroPasajeros(){
-		$this->load->view('traveler/header');
-		$this->load->view('traveler/reserva/formularioRegistroPasajero');
-	}
+
+	*/
+
+
+
+
+
+	/*
 	function listadoPasajeros(){
 		$data = array(
 			'dni' => $this->input->post('dni')

@@ -55,7 +55,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="<?php echo base_url('index.php/Reserva/reservasPorFecha')?>">Buscar Reg. Reserva » Por Fecha </a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="reservasPorPasajero">Buscar Reg. Reserva » Por Pasajero</a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/Reserva/reservasPorPasajero')?>">Buscar Reg. Reserva » Por Pasajero</a>
 					<!--<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div>-->
@@ -66,16 +66,16 @@
 					Historial de Alojamientos
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="alojamientosPorFecha">Historial de Alojamientos » Por Fecha </a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/Reserva/alojamientosPorFecha')?>">Historial de Alojamientos » Por Fecha </a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="alojamientosPorPasajero">Historial de Alojamientos » Por Pasajero</a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/Reserva/alojamientosPorPasajero')?>">Historial de Alojamientos » Por Pasajero</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pasajero
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="registroPasajeros">Registrar ingreso del Pasajero</a>
+						<a class="dropdown-item" href="<?php echo base_url('index.php/pasajero/registroPasajeros')?>">Registrar ingreso del Pasajero</a>
 					</div>
 				</li>
 
@@ -86,13 +86,13 @@
 					Configuración 
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="administrarTipoHabitacion">Tipo de Habitaciones </a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/traveler/administrarTipoHabitacion')?>">Tipo de Habitaciones </a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="administrarHabitacion">Habitaciones</a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/traveler/administrarHabitacion')?>">Habitaciones</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="administrarCargos">Cargos</a>
+					<a class="dropdown-item" href="<?php echo base_url('index.php/traveler/administrarCargos')?>">Cargos</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="administrarUsuarios">Usuarios</a>					
+					<a class="dropdown-item" href="<?php echo base_url('index.php/traveler/administrarUsuarios')?>">Usuarios</a>					
 				</li>
 				<li class="nav-item">
 				<a class="nav-link" href="<?php echo base_url('index.php/elIndeseable/index'); ?>">El Indeseable</a>

@@ -129,12 +129,36 @@ class Reserva_model extends CI_Model{
         $query = $this->db->get();
         return $query;
 	}
-	function registroPasajeros($dato){
+	//Listado de alojaminetos por pasajero, $dato : DNI	
+	function registroPasajeros($pDni){
+
+		$str_dni = (string)$pDni;
+
+		$sql = "SELECT 
+					documento, 
+					apellidos, 
+					nombres, 
+					'calleYNum', 
+					'fechaNac', 
+					telefono, 
+					'codPost'
+				FROM public.cliente
+				WHERE documento  =  $str_dni";
+
+		$query=$this->db->query($sql);
+
+		//$query = $this->db->get();
+		var_dump($query); die();
+        return $query;
+
+		/* 
 		$this->db->select("*");
         $this->db->from('cliente');
         $this->db->where('documento', $dato['dni']);
         $query = $this->db->get();
-        return $query;
+		return $query;
+		*/
+
 	}
 	function chequearDisponibilidad($data){
 		$this->db->select("*");

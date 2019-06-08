@@ -1,20 +1,3 @@
-<!--<?= form_open("index.php/traveler/eliminacionTipoHabitacion") ?>
-<h2>Buscar tipo de habitación</h2>
-<?php
-	$nombreTipo= array(
-		'name' => 'nombreTipo'
-	);
-?>
-<h3>
-<?= form_label('Nombre del Tipo: ', 'nombreTipo') ?>
-<?= form_input($nombreTipo) ?>
-<br>
-<?= form_submit('', 'Buscar') ?>
-</h3>
-<?= form_close() ?>-->
-
-
-
 
 <!--formulario Bootstrap -->
 <div class="container">
