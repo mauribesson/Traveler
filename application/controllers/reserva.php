@@ -288,8 +288,7 @@ class Reserva extends CI_Controller{
 		$dato['pasajero'] = $this->traveler_model->registroPasajeros($data);
 		$this->load->view('traveler/header');
 		$this->load->view('traveler/reserva/listadoPasajeros', $dato);
-    }
-    
+    }    
 	
 
 	function eliminarReserva($id){

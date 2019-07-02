@@ -3,7 +3,7 @@
 class Pasajero extends CI_Controller{
 	function __construct(){
 		parent::__construct();	
-	    //Modelos
+	    //Modelos  
 		$this->load->model('reserva_model');
         $this->load->model('traveler_model');
         $this->load->model('usuario_model');

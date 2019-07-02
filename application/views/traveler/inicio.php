@@ -114,6 +114,10 @@
 		</div>
 	</div>
 </div>
+<script>
 
+	let traveler = new Traveler();
+		
+</script>
 </body>
 </html>

@@ -118,7 +118,7 @@
             <input id="documento" type="documento" class="form-control" name="documento" placeholder="">
             <small class="text-danger">(Sin puntos ".")</small>
           </div>
-          <button type="submit" class="btn btn-primary">Aceptar</button>
+          <button id ="nuevaReservaSubmit" type="submit" class="btn btn-primary">Aceptar</button>
           <a href="<?php echo base_url('/index.php/Traveler/index'); ?>"class="btn btn-danger">Cancelar</a>
       </form>      
     </div>
@@ -161,7 +161,11 @@
         $('#cantPersonas').val(<?php  if (isset($validacion) ){ echo $validacion['cantPersonas']->valor ; } ?>);
         $('#documento').val(<?php  if (isset($validacion) ){ echo $validacion['documento']->valor ; } ?>);
        
-        
+        //let traveler = new Traveler();
+        //traverler.nuevaReservaValidacionFormulario();
+
+        // Traveler.js
+        nuevaReservaValidacionFormulario();
 
     });
 </script>

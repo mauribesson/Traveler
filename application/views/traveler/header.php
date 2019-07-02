@@ -16,6 +16,8 @@
 		<script  type="text/javascript" src="<?php echo base_url('estilo/moment/locale/es.js');?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('estilo/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js'); ?>"></script> 
 		<script type="text/javascript" src="<?php echo base_url('estilo/fontawesome/js/fontawesome-all.min.js'); ?>"></script> 
+		<!-- APP Traveler -->
+		<script type="text/javascript" src="<?php echo base_url('estilo/Traveler/Traveler.js'); ?>"></script> 
 </head>
 <body>
 <!--NavBar-->
