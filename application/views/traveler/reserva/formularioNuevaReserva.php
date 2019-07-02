@@ -24,7 +24,11 @@
   <div class="row">
     <div class="col-md-6">      
       <h2>Reserva 
-        <h1 style="color:red"><b>[Sin terminar: fECHA POR DEFECTO Y CAMPO NUEVO SI FALTA, FECHA HASMA TENGA QUE SER MENOR]</b></h1>
+        <h5 style="color:red">
+        <b>
+           [Sin terminar: FECHA POR DEFECTO Y CAMPO NUEVO SI FALTA, FECHA HASMA TENGA QUE SER MENOR]
+        </b>
+        </h5>
       </h2>
     </div>
   </div>

@@ -2,8 +2,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-		<h1 style="color:red"><b>[pendiente: reserva( di la habitacion esta ocupada el volver redigige a inicio, deberia bolver al form para cambia o validar))
-		,,,, MODIFICAR FUNCIONALIDAD DE LA FECHA DE RESERVA,,,,,,  corregir vslidacion Nueva reserva, revisar ruteo, agregar arribo, checkout, agregar footer],,,,   ESTETICA a pantallas de confirmacion de lata de tipo de hanitacion</b></h1>
+		<h5 style="color:red">
+		<b>
+		[PENDIENTES: reserva( di la habitacion esta ocupada el volver redigige a inicio, deberia bolver al form para cambia o validar))
+		,,,, MODIFICAR FUNCIONALIDAD DE LA FECHA DE RESERVA,,,,,,  corregir vslidacion Nueva reserva, revisar ruteo, agregar arribo, checkout, agregar footer],,,,   ESTETICA a pantallas de confirmacion de lata de tipo de hanitacion
+		]
+		</b>
+		</h5>
 		
 		
 		</div>
@@ -116,7 +121,7 @@
 </div>
 <script>
 
-	let traveler = new Traveler();
+	//let traveler = new Traveler();
 		
 </script>
 </body>

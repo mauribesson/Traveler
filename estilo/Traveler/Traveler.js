@@ -21,11 +21,11 @@
 
 }
 */
-
+//Validar reserv
 function nuevaReservaValidacionFormulario() {
     $('#nuevaReservaSubmit').click(function(e) {
-        alert('se freno el formulario...');
-        e.preventDefault();
+        alert('Agregar calidacion por js');
+        //e.preventDefault();
 
         // $.post();
     });
