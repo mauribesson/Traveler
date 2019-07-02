@@ -24,7 +24,7 @@
 //Validar reserv
 function nuevaReservaValidacionFormulario() {
     $('#nuevaReservaSubmit').click(function(e) {
-        alert('Agregar calidacion por js');
+        alert('Agregar Validacion por js');
         //e.preventDefault();
 
         // $.post();
