@@ -34,7 +34,7 @@
   </div>
   <div class="row">
     <div class="col-md-6" >
-      <form action="<?php echo base_url('/index.php/Reserva/guardarNuevaReserva'); ?>" method="post" accept-charset="utf-8">
+      <form id="formNuevaReserva" action="<?php echo base_url('/index.php/Reserva/guardarNuevaReserva'); ?>" method="post" accept-charset="utf-8">
             <div class="form-group">
             <label for="fecha1">Fecha de Reserva : </label> 
             <?php 

@@ -179,6 +179,8 @@ class Reserva_model extends CI_Model{
 		$query = $this->db->get();
 		return $query;
 	}
+
+	
 	function altaReserva($datas){
 		$this->db->insert('reserva', array(
 			'fechaReservacion'=>$datas['fechaReservacion'], 
